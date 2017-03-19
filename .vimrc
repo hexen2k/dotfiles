@@ -96,7 +96,7 @@ set undolevels=1000
 set undoreload=10000
 
 "solarized plugin option:
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 syntax enable
 set background=dark
 colorscheme solarized
@@ -227,7 +227,7 @@ function! VisualHiInterestingWord(n) " {{{
 
     " Construct a literal pattern that has to match at boundaries.
     let pat = '\V' . escape(@z, '\')
-echom pat
+
     " Actually match the words.
     call matchadd("InterestingWord" . a:n, pat, 1, mid)
 
