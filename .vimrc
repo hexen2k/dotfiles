@@ -146,3 +146,6 @@ let g:indent_guides_start_level=2
 "switching between buffers
 nnoremap <C-Tab> :bnext<cr>
 nnoremap <C-S-Tab> :bprev<cr>
+"mark and move up completed task
+nnoremap <leader>u jmmk^r+ddgg}P'm
+
