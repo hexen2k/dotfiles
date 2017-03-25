@@ -28,9 +28,15 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
-Plugin 'sjl/gundo.vim'
+" Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
+" options and python is required
+Plugin 'mbbill/undotree'
+
+"TODO: decide whith will remain
 Plugin 'msanders/snipmate.vim'
-"TODO: add Ultisnips, vim-snippet, youcompleteme
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -151,7 +157,12 @@ if has("gui_running")
     set guioptions-=L           " No left scrollbar
     set guioptions-=r           " No right scrollbar
     if has("win32")
-        au GUIEnter * simalt ~x     " Start maximized
+        let hostname = substitute(system('hostname'), '\n', '', '')
+        if hostname == "main_michal"
+            au GUIEnter * simalt ~s     " Start maximized, x-eng OS, s-pl OS
+        elseif hostname == "e6420"
+            au GUIEnter * simalt ~x     " Start maximized, x-eng OS, s-pl OS
+        endif
     else
         call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
     endif
