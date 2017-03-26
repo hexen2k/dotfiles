@@ -31,12 +31,14 @@ Plugin 'mileszs/ack.vim'
 " Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
 " options and python is required
 Plugin 'mbbill/undotree'
+Plugin 'majutsushi/tagbar'
 
 "TODO: decide whith will remain
 Plugin 'msanders/snipmate.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -109,7 +111,7 @@ set viminfo='9999,%             "store marks for 9999 files, remember buffer lis
 
 set undofile
 if has("win32")
-    set undodir="c:\logs\vimundo"
+    set undodir=$HOME/vimfiles/logs/vimundo
 else
     set undodir=~/vimfiles/logs/vimundo
 endif
@@ -196,6 +198,9 @@ nnoremap <F5> :NERDTreeToggle<cr>
 
 "show/hide Undotree pane on the left
 nnoremap <F6> :UndotreeToggle<CR>
+
+"show/hide Tagbar pane on the right (function list)
+nnoremap <F7> :TagbarToggle<CR>
 
 "write, compile, program
 nnoremap <F9> :w<CR>:make all<CR><CR>:make program<CR><CR>
@@ -449,6 +454,16 @@ if has("gui_running")
     nmap <leader> :call FontSizeMinus()<CR>
     nmap <leader>= :call FontSizePlus()<CR>
 endif
+
+"syntastic plugin default recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "TODO:
 "set showmatch
