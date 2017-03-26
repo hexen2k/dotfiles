@@ -34,11 +34,14 @@ Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 
 "TODO: decide whith will remain
-Plugin 'msanders/snipmate.vim'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'vim-syntastic/syntastic'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
