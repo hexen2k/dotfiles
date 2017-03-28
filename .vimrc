@@ -454,8 +454,8 @@ else
 endif
 
 if has("gui_running")
-    nmap <leader> :call FontSizeMinus()<CR>
-    nmap <leader>= :call FontSizePlus()<CR>
+    nnoremap <leader>- :call FontSizeMinus()<CR>
+    nnoremap <leader>= :call FontSizePlus()<CR>
 endif
 
 "syntastic plugin default recommended settings
@@ -468,8 +468,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Keybindings for UltiSnips, all of these are ctrl + key
+let g:UltiSnipsExpandTrigger       = '<c-j>'
+let g:UltiSnipsListSnippets        = '<c-l>'
+let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+"for proper searching user defined snippets
+set rtp+=~/
+
 "TODO:
 "set showmatch
 "skip loading behaviours MSWIN
 "let g:skip_loading_mswin = 1
+"set cindent only for the C source code family
 
