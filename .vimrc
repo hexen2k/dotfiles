@@ -101,6 +101,10 @@ set expandtab
 
 set showcmd
 set wildmenu
+"change working directory automatically to current opened file
+set autochdir
+"include all subdir during search
+set path+=**
 
 set cursorline
 set cursorcolumn
