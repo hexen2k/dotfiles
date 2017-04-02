@@ -1,9 +1,10 @@
+" vvim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
-call vundle#begin('$HOME/vimfiles/bundle/')
+set rtp+=$HOME/.vim/bundle/Vundle.vim/
+call vundle#begin('$HOME/.vim/bundle/')
 "call vundle#begin('$USERPROFILE/vimfiles/bundle/')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -85,6 +86,8 @@ let $LANG = 'en_US'
 set number
 set relativenumber
 
+set hidden
+
 set wrapscan
 
 set hlsearch
@@ -118,9 +121,9 @@ set viminfo='9999,%             "store marks for 9999 files, remember buffer lis
 
 set undofile
 if has("win32")
-    set undodir=$HOME/vimfiles/logs/vimundo
+    set undodir=$HOME/.vim/logs/vimundo
 else
-    set undodir=~/vimfiles/logs/vimundo
+    set undodir=~/.vim/logs/vimundo
 endif
 set undolevels=1000
 set undoreload=10000
@@ -485,4 +488,6 @@ set rtp+=~/
 "skip loading behaviours MSWIN
 "let g:skip_loading_mswin = 1
 "set cindent only for the C source code family
+
+set rtp-=$HOME/vimfiles
 
