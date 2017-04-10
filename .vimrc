@@ -87,6 +87,8 @@ set number
 set relativenumber
 
 set hidden
+"allow moving the cursor freely during blockwise operation
+set virtualedit+=block
 
 set wrapscan
 
