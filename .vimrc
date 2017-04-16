@@ -198,6 +198,9 @@ inoremap <S-A-k> <Esc>:m .-2<CR>==gi
 vnoremap <S-A-j> :m '>+1<CR>gv=gv
 vnoremap <S-A-k> :m '<-2<CR>gv=gv
 
+"when you forgot to sudo before editing a file that requires root privileges
+cmap w!! w !sudo tee % >/dev/null
+
 "change to current file working directory
 nnoremap <F1> :cd %:p:h<CR>:pwd<CR>
 
