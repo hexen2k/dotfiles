@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'mileszs/ack.vim'
 " Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
 " options and python is required
