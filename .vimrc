@@ -92,6 +92,9 @@ set relativenumber
 set hidden
 "allow moving the cursor freely during blockwise operation
 set virtualedit+=block
+"auto-pairs delete_in_pair feature fix (obligatory backspace=start),
+"allow backspaces everywhere
+set backspace=indent,eol,start
 
 set wrapscan
 
