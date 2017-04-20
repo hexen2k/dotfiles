@@ -95,6 +95,8 @@ set virtualedit+=block
 "auto-pairs delete_in_pair feature fix (obligatory backspace=start),
 "allow backspaces everywhere
 set backspace=indent,eol,start
+"auto-pairs Fly mode ON
+let g:AutoPairsFlyMode = 1
 
 set wrapscan
 
