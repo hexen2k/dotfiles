@@ -35,6 +35,7 @@ Plugin 'mileszs/ack.vim'
 " options and python is required
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
+Plugin 'godlygeek/tabular'
 
 "TODO: decide whith will remain
 "Plugin 'MarcWeber/vim-addon-mw-utils'
