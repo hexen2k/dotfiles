@@ -36,6 +36,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
+Plugin 'vimwiki/vimwiki'
 
 "TODO: decide whith will remain
 "Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -490,6 +491,14 @@ if exists(":SyntasticInfo")
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
 endif
+
+"vimwiki configuration
+"To use Markdown's wiki markup:
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown',
+                  \ '.mkd': 'markdown',
+                  \ '.wiki': 'media'}
 
 " Keybindings for UltiSnips, all of these are ctrl + key
 let g:UltiSnipsExpandTrigger       = '<c-j>'
