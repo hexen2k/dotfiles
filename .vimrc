@@ -30,6 +30,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
+Plugin 'gikmx/ctrlp-obsession'
 Plugin 'mileszs/ack.vim'
 " Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
 " options and python is required
@@ -129,7 +132,8 @@ set foldlevelstart=0
 set foldnestmax=10
 
 set shortmess+=I
-set viminfo='9999,%             "store marks for 9999 files, remember buffer list
+"set viminfo='9999,%             "store marks for 9999 files, remember buffer list
+set viminfo='9999             "store marks for 9999 files, changed for obsession compatibility
 
 set undofile
 if has("win32")
@@ -166,6 +170,11 @@ set laststatus=2 "always show status line
 let g:airline_powerline_fonts = 1
 "Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
+"prepend a '$' when vim-obsession is enabled
+let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+
+"CtrlPObsession plugin config
+nnoremap <Leader>ss :CtrlPObsession<CR>
 
 "font settings
 if has("win32")
