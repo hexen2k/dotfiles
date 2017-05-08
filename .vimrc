@@ -119,6 +119,10 @@ set expandtab
 
 set showcmd
 set wildmenu
+set wildmode=list,full
+set splitbelow "command :sp insert new window below active one
+set splitright "command :vs inserts new window on the right side
+set linebreak "do not break words
 "change working directory automatically to current opened file
 set autochdir
 "include all subdir during search
@@ -157,7 +161,7 @@ if exists(":SolarizedOptions")
     let g:solarized_hitrail = 1
     colorscheme solarized
 
-    "Invisible character colors 
+    "Invisible character colors
     highlight NonText guifg=#4a4a59
     highlight SpecialKey guifg=#4a4a59
 else
