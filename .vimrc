@@ -40,6 +40,7 @@ Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'vimwiki/vimwiki'
+Plugin 'coderifous/textobj-word-column.vim'
 
 "TODO: decide whith will remain
 "Plugin 'MarcWeber/vim-addon-mw-utils'
