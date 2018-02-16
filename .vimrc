@@ -14,6 +14,11 @@ call vundle#begin('$HOME/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'sjl/badwolf'
+Plugin 'sickill/vim-monokai'
+Plugin 'dracula/vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
@@ -41,6 +46,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'vimwiki/vimwiki'
 Plugin 'coderifous/textobj-word-column.vim'
+Plugin 'rickhowe/diffchar.vim'
+Plugin 'rhysd/vim-clang-format'
 
 "TODO: decide whith will remain
 "Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -52,6 +59,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-syntastic/syntastic'
+"Plugin 'rhysd/vim-clang-format'
+"Plugin 'w0rp/ale'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -91,6 +100,8 @@ set termencoding=utf-8
 
 set langmenu=en_US
 let $LANG = 'en_US'
+
+set lazyredraw
 
 set number
 set relativenumber
@@ -152,7 +163,8 @@ set undoreload=10000
 set background=dark
 
 "solarized plugin option:
-silent! colorscheme solarized
+colorscheme torte
+silent! colorscheme badwolf
 "tricky way to check if solarized colorscheme is available
 if exists(":SolarizedOptions")
     let g:solarized_termcolors=16
@@ -165,8 +177,6 @@ if exists(":SolarizedOptions")
     "Invisible character colors
     highlight NonText guifg=#4a4a59
     highlight SpecialKey guifg=#4a4a59
-else
-    colorscheme torte
 endif
 
 set laststatus=2 "always show status line
@@ -457,6 +467,8 @@ nnoremap <leader>ct IFZD :<cr><cr>Test scenario:<cr><cr>Expected:<cr><cr>Observe
 inoremap <leader>ih I391_KKL_GR_3Bt_Or
 "insert visual arrow pointer
 inoremap <- <--- 
+"parse time buffer
+map <leader>pt :so ~\.vim\myscripts\parseTimeV2.vim<CR>
 
 "quick font resizing
 if has("unix")
