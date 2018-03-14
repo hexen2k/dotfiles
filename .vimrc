@@ -15,11 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sjl/badwolf'
-Plugin 'sickill/vim-monokai'
-Plugin 'dracula/vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'tomasr/molokai'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 "Plugin 'Raimondi/delimitMate'
@@ -505,6 +502,8 @@ if has("gui_running")
     nnoremap <leader>- :call FontSizeMinus()<CR>
     nnoremap <leader>= :call FontSizePlus()<CR>
 endif
+
+let g:signify_vcs_list = [ 'git' ]
 
 "syntastic plugin default recommended settings
 if exists(":SyntasticInfo")
