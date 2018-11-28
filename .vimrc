@@ -102,6 +102,7 @@ set lazyredraw
 
 set number
 set relativenumber
+set nrformats=bin,hex
 
 set hidden
 "allow moving the cursor freely during blockwise operation
