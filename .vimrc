@@ -13,10 +13,11 @@ call vundle#begin('$HOME/.vim/bundle/')
 " Plugin 'powerline/powerline'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sjl/badwolf'
-"Plugin 'airblade/vim-gitgutter'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'sjl/badwolf'
 Plugin 'mhinz/vim-signify'
+Plugin 'dolph/vim-colors-solarized-black'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 "Plugin 'Raimondi/delimitMate'
@@ -54,11 +55,10 @@ Plugin 'markonm/traces.vim'
 "Plugin 'garbas/vim-snipmate'
 "Plugin 'ervandew/supertab'
 
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-syntastic/syntastic'
-"Plugin 'rhysd/vim-clang-format'
 "Plugin 'w0rp/ale'
 
 " The following are examples of different formats supported.
@@ -163,8 +163,7 @@ set undoreload=10000
 set background=dark
 
 "solarized plugin option:
-colorscheme torte
-silent! colorscheme badwolf
+silent! colorscheme solarized
 "tricky way to check if solarized colorscheme is available
 if exists(":SolarizedOptions")
     let g:solarized_termcolors=16
@@ -173,10 +172,16 @@ if exists(":SolarizedOptions")
     " turn on experimental showing trail spaces feature
     let g:solarized_hitrail = 1
     colorscheme solarized
-
+    "high contrast in diff mode
+    let g:solarized_diffmode="high"
+    "workaround: after setting g:solarized_diffmode colorscheme has to be
+    "reloaded
+    silent! colorscheme solarized
     "Invisible character colors
     highlight NonText guifg=#4a4a59
     highlight SpecialKey guifg=#4a4a59
+else
+    colorscheme torte
 endif
 
 set laststatus=2 "always show status line
@@ -279,7 +284,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "map ESCAPE key to convenient method
 inoremap jk 
 
-"remowe trailing spaces from specified type of files during writing
+"remove trailing spaces from specified type of files during writing
 autocmd BufWritePre *.{c,cpp,h} %s/\s\+$//e
 
 "repeat last command with the ENTER key
@@ -326,6 +331,11 @@ nnoremap vv ^vg_
 
 "simple calculator
 inoremap <c-b> <c-o>yiW<End>=<c-r>=<c-r>0<cr>
+
+"visvim manual surround
+vmap <leader>( c(jkpa)jk
+vmap <leader>[ c[jkpa]jk
+vmap <leader>{ c{jkpa}jk
 
 "indent-guides plugin configuration
 let g:indent_guides_guide_size=1
