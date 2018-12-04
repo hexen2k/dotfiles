@@ -10,17 +10,12 @@ call vundle#begin('$HOME/.vim/bundle/')
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'powerline/powerline'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'sjl/badwolf'
 Plugin 'mhinz/vim-signify'
 Plugin 'dolph/vim-colors-solarized-black'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
-"Plugin 'Raimondi/delimitMate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'ludovicchabant/vim-gutentags'
@@ -50,11 +45,12 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'markonm/traces.vim'
 
 "TODO: decide whith will remain
+"Plugin 'Raimondi/delimitMate'
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
 "Plugin 'ervandew/supertab'
 
+"Plugin 'garbas/vim-snipmate'
 "Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "Plugin 'Valloric/YouCompleteMe'
@@ -140,9 +136,6 @@ set autochdir
 "include all subdir during search
 set path+=**
 
-set cursorline
-set cursorcolumn
-
 set foldenable
 set foldlevelstart=0
 set foldnestmax=10
@@ -159,30 +152,6 @@ else
 endif
 set undolevels=1000
 set undoreload=10000
-
-set background=dark
-
-"solarized plugin option:
-silent! colorscheme solarized
-"tricky way to check if solarized colorscheme is available
-if exists(":SolarizedOptions")
-    let g:solarized_termcolors=16
-    "turn off italic fonts (e.g. used in comment sections)
-    let g:solarized_italic = 0
-    " turn on experimental showing trail spaces feature
-    let g:solarized_hitrail = 1
-    colorscheme solarized
-    "high contrast in diff mode
-    let g:solarized_diffmode="high"
-    "workaround: after setting g:solarized_diffmode colorscheme has to be
-    "reloaded
-    silent! colorscheme solarized
-    "Invisible character colors
-    highlight NonText guifg=#4a4a59
-    highlight SpecialKey guifg=#4a4a59
-else
-    colorscheme torte
-endif
 
 set laststatus=2 "always show status line
 
@@ -203,6 +172,27 @@ else
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 
+set background=dark
+
+silent! colorscheme solarized
+
+"tricky way to check if solarized colorscheme is available
+if exists(":SolarizedOptions")
+    "turn off italic fonts (e.g. used in comment sections)
+    let g:solarized_italic = 0
+    " turn on experimental showing trail spaces feature
+    let g:solarized_hitrail = 1
+    colorscheme solarized
+    "high contrast in diff mode
+    let g:solarized_diffmode="high"
+    "REMARK: after setting g:solarized_diffmode colorscheme has to be reloaded
+    "Invisible character colors
+    highlight NonText guifg=#4a4a59
+    highlight SpecialKey guifg=#4a4a59
+    "special list characters visibility level
+    let g:solarized_visibility="normal"
+endif
+
 " GUI OPTIONS - only affects gvim
 if has("gui_running")
     set guioptions-=T           " No toolbar
@@ -215,11 +205,23 @@ if has("gui_running")
             au GUIEnter * simalt ~s     " Start maximized, x-eng OS, s-pl OS
         elseif hostname == "e6420"
             au GUIEnter * simalt ~x     " Start maximized, x-eng OS, s-pl OS
+        elseif hostname == "DESKTOP-DM55UGI"
+            au GUIEnter * simalt ~x
         endif
     else
         call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
     endif
+else "terminal mode/no gui
+    set t_Co=256
+    let g:solarized_termcolors=256
 endif
+
+colorscheme solarized
+"set proper colour of signcolumn - broken by solarized colorscheme
+highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
+
+set cursorline
+set cursorcolumn
 
 "shift lines or selection in normal, input and visual mode
 nnoremap <A-j> :m .+1<CR>
