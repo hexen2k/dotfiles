@@ -45,14 +45,16 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'markonm/traces.vim'
 
 "TODO: decide whith will remain
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'ervandew/supertab'
-
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'SirVer/ultisnips'
+"vim-snipmate section
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+
+"Plugin 'SirVer/ultisnips'
+
+"Plugin 'ervandew/supertab'
+"Plugin 'Raimondi/delimitMate'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'w0rp/ale'
