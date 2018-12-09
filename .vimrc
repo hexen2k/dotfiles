@@ -15,7 +15,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'mhinz/vim-signify'
 Plugin 'dolph/vim-colors-solarized-black'
 Plugin 'scrooloose/nerdtree'
-Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'ludovicchabant/vim-gutentags'
@@ -552,6 +551,9 @@ let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 "for proper searching user defined snippets
 set rtp+=~/
+"snipmate plugin - add my own defined snippets
+"NOTE: snipmate searches for snippets folder INSIDE rtp!
+set rtp^=~/.vim/snippets/
 
 "TODO:
 "set showmatch
