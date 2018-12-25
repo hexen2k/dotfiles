@@ -42,6 +42,7 @@ Plugin 'coderifous/textobj-word-column.vim'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'markonm/traces.vim'
+Plugin 'sgur/vim-editorconfig'
 
 "TODO: decide whith will remain
 "vim-snipmate section
@@ -554,6 +555,9 @@ set rtp+=~/
 "snipmate plugin - add my own defined snippets
 "NOTE: snipmate searches for snippets folder INSIDE rtp!
 set rtp^=~/.vim/snippets/
+
+"enable extended % jumping functionality
+packadd! matchit
 
 "TODO:
 "set showmatch
