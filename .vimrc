@@ -56,7 +56,6 @@ Plugin 'honza/vim-snippets'
 "Plugin 'ervandew/supertab'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'vim-syntastic/syntastic'
 "Plugin 'w0rp/ale'
 
 " The following are examples of different formats supported.
@@ -521,18 +520,6 @@ if has("gui_running")
 endif
 
 let g:signify_vcs_list = [ 'git' ]
-
-"syntastic plugin default recommended settings
-if exists(":SyntasticInfo")
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-endif
 
 "vimwiki configuration
 "To use Markdown's wiki markup:
