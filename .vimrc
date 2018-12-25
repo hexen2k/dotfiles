@@ -31,7 +31,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-eunuch'
 Plugin 'dhruvasagar/vim-prosession'
 Plugin 'gikmx/ctrlp-obsession'
-Plugin 'mileszs/ack.vim'
+Plugin 'mhinz/vim-grepper'
 " Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
 " options and python is required
 Plugin 'mbbill/undotree'
@@ -558,6 +558,20 @@ set rtp^=~/.vim/snippets/
 
 "enable extended % jumping functionality
 packadd! matchit
+
+"exclude regexp patterns for filetypes or filepaths
+let g:editorconfig_blacklist = {
+    \ 'filetype': ['vimrc', '.vimrc'],
+    \ 'pattern': ['vimrc']}
+
+"grepper plugin configuration
+let g:grepper = {}
+let g:grepper.tools = ['rg','git','grep']
+"search for the current word
+nnoremap <leader>* :Grepper -cword -noprompt<CR>
+"search for the current selection
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 
 "TODO:
 "set showmatch
