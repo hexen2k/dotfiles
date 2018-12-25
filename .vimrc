@@ -43,6 +43,7 @@ Plugin 'rickhowe/diffchar.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'markonm/traces.vim'
 Plugin 'sgur/vim-editorconfig'
+Plugin 'w0rp/ale'
 
 "TODO: decide whith will remain
 "vim-snipmate section
@@ -56,7 +57,6 @@ Plugin 'honza/vim-snippets'
 "Plugin 'ervandew/supertab'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'w0rp/ale'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -479,7 +479,7 @@ nnoremap <leader>ct IFZD :<cr><cr>Test scenario:<cr><cr>Expected:<cr><cr>Observe
 "insert hardware version
 inoremap <leader>ih I391_KKL_GR_3Bt_Or
 "insert visual arrow pointer
-inoremap <- <--- 
+inoremap <- <---
 "parse time buffer
 map <leader>pt :so ~\.vim\myscripts\parseTimeV2.vim<CR>
 
@@ -559,6 +559,12 @@ nnoremap <leader>* :Grepper -cword -noprompt<CR>
 "search for the current selection
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
+
+"ALE linter configuration
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]W <Plug>(ale_next)
+nmap <silent> ]w <Plug>(ale_last)
 
 "TODO:
 "set showmatch
