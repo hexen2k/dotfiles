@@ -44,8 +44,9 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'markonm/traces.vim'
 Plugin 'sgur/vim-editorconfig'
 Plugin 'w0rp/ale'
+Plugin 'ervandew/supertab'
 
-"TODO: decide whith will remain
+"TODO: decide whith will remain snipmate/ultisnips
 "vim-snipmate section
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -53,8 +54,14 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 "Plugin 'SirVer/ultisnips'
+"
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 
-"Plugin 'ervandew/supertab'
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog  = 'C:\apps\python3\python.exe'
+
 "Plugin 'Valloric/YouCompleteMe'
 
 " The following are examples of different formats supported.
