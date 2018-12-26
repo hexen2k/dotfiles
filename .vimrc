@@ -54,10 +54,14 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 "Plugin 'SirVer/ultisnips'
-"
+
+"deoplete plugin section
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
+
+"vim script autocomplete
+Plugin 'Shougo/neco-vim'
 
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog  = 'C:\apps\python3\python.exe'
