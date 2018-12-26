@@ -55,7 +55,6 @@ Plugin 'honza/vim-snippets'
 "Plugin 'SirVer/ultisnips'
 
 "Plugin 'ervandew/supertab'
-"Plugin 'Raimondi/delimitMate'
 "Plugin 'Valloric/YouCompleteMe'
 
 " The following are examples of different formats supported.
