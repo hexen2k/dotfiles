@@ -46,14 +46,17 @@ Plugin 'sgur/vim-editorconfig'
 Plugin 'w0rp/ale'
 Plugin 'ervandew/supertab'
 
-"TODO: decide whith will remain snipmate/ultisnips
+"TODO: decide whith will remain snipmate/ultisnips/neosnippet
 "vim-snipmate section
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
 
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
+
+" Plugin 'Shougo/neosnippet.vim'
+
+Plugin 'honza/vim-snippets'
 
 "deoplete plugin section
 Plugin 'Shougo/deoplete.nvim'
@@ -575,6 +578,20 @@ nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]W <Plug>(ale_next)
 nmap <silent> ]w <Plug>(ale_last)
+
+"supertab plugin configuration
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-n>") |
+  \ endif
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+""snipmate plugin configuration
+"imap <c-j> <Plug>snipMateNextOrTrigger
+"smap <C-j> <Plug>snipMateNextOrTrigger
+"imap <c-k> <Plug>snipMateBack
+"smap <c-k> <Plug>snipMateBack
 
 "TODO:
 "set showmatch
