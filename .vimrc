@@ -582,11 +582,17 @@ nmap <silent> ]w <Plug>(ale_last)
 
 "supertab plugin configuration
 let g:SuperTabDefaultCompletionType = 'context'
-autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-n>") |
-  \ endif
+augroup omnifuncs
+    autocmd!
+    autocmd FileType *
+                \ if &omnifunc != '' |
+                \   call SuperTabChain(&omnifunc, "<c-n>") |
+                \ endif
+augroup end
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabClosePreviewOnPopupClose = 1
+" close popup window with <CR> key
+" inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
 "snipmate plugin configuration
 "imap <c-j> <Plug>snipMateNextOrTrigger
