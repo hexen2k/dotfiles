@@ -37,6 +37,7 @@ Plugin 'mhinz/vim-grepper'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'vimwiki/vimwiki'
 Plugin 'coderifous/textobj-word-column.vim'
 Plugin 'rickhowe/diffchar.vim'
@@ -599,6 +600,11 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 "smap <C-j> <Plug>snipMateNextOrTrigger
 "imap <c-k> <Plug>snipMateBack
 "smap <c-k> <Plug>snipMateBack
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "TODO:
 "set showmatch
