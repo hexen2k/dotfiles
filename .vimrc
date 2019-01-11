@@ -235,6 +235,10 @@ endif
 colorscheme solarized
 "set proper colour of signcolumn - broken by solarized colorscheme
 highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
+"better contrast - overwrite setting from solarized plugin - those lines have
+"to be placed after [colorscheme solarized] command
+highlight Normal guifg=LightGray
+highlight Comment guifg=DarkGray
 
 set cursorline
 set cursorcolumn
@@ -580,6 +584,11 @@ nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]W <Plug>(ale_next)
 nmap <silent> ]w <Plug>(ale_last)
+" Do not lint or fix can and cin files.
+let g:ale_pattern_options = {
+\ '\.can$': {'ale_linters': [], 'ale_fixers': []},
+\ '\.cin$': {'ale_linters': [], 'ale_fixers': []},
+\}
 
 "supertab plugin configuration
 let g:SuperTabDefaultCompletionType = 'context'
