@@ -144,6 +144,16 @@ set expandtab
 set showcmd
 set wildmenu
 set wildmode=list,full
+"allows you to search for foo and find Foo
+set wildignorecase
+
+"wildmenu ignore filename mask
+set wildignore=*.swp,*.bak
+set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=tags
+set wildignore+=*.tar.*
+
 set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
 set linebreak "do not break words
