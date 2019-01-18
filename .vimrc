@@ -46,6 +46,7 @@ Plugin 'markonm/traces.vim'
 Plugin 'sgur/vim-editorconfig'
 Plugin 'w0rp/ale'
 Plugin 'ervandew/supertab'
+Plugin 'simeji/winresizer'
 
 "TODO: decide whith will remain snipmate/ultisnips/neosnippet
 "vim-snipmate section
@@ -176,6 +177,7 @@ if has("win32")
 else
     set undodir=~/.vim/logs/vimundo
 endif
+set viewdir=~/.vim/view
 set undolevels=1000
 set undoreload=10000
 
@@ -232,6 +234,8 @@ if has("gui_running")
         elseif hostname == "e6420"
             au GUIEnter * simalt ~x     " Start maximized, x-eng OS, s-pl OS
         elseif hostname == "DESKTOP-DM55UGI"
+            au GUIEnter * simalt ~x
+        else
             au GUIEnter * simalt ~x
         endif
     else
@@ -567,10 +571,7 @@ let g:UltiSnipsListSnippets        = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 "for proper searching user defined snippets
-set rtp+=~/
-"snipmate plugin - add my own defined snippets
-"NOTE: snipmate searches for snippets folder INSIDE rtp!
-set rtp^=~/.vim/snippets/
+set rtp+=~/.vim
 
 "enable extended % jumping functionality
 packadd! matchit
@@ -624,6 +625,13 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"easy PageUp/Down screen scrolling
+noremap <PageUp> 3
+noremap <PageDown> 3
+
+"start window resize mode
+let g:winresizer_start_key = '<leader>r'
 
 "TODO:
 "set showmatch
