@@ -633,6 +633,10 @@ noremap <PageDown> 3
 "start window resize mode
 let g:winresizer_start_key = '<leader>r'
 
+"scrolling offset vertical and horizontal
+set scrolloff=5
+set sidescrolloff=999
+
 "TODO:
 "set showmatch
 "skip loading behaviours MSWIN
