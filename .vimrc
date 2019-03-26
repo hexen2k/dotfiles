@@ -72,6 +72,11 @@ Plugin 'Shougo/neco-vim'
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog  = 'C:\apps\python3\python.exe'
 
+"TODO: check this colorscheme
+"https://github.com/morhetz/gruvbox
+"TODO: refactoring plugin?
+"https://github.com/apalmer1377/factorus
+
 "Plugin 'Valloric/YouCompleteMe'
 
 " The following are examples of different formats supported.
@@ -154,6 +159,7 @@ set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dl
 set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
 set wildignore+=tags
 set wildignore+=*.tar.*
+set wildignore+=*.cbf,*.gen,*.pdf,*.zip,*.7z,*.blf,*.db
 
 set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
