@@ -1,0 +1,68 @@
+"map ESCAPE key to convenient method
+inoremap jk 
+
+"manual surround selection
+vmap <leader>( c(pa)jk
+vmap <leader>[ c[pa]jk
+vmap <leader>{ c{pa}jk
+
+"manual surround WORD
+nnoremap <leader>) viWa)Bi(%
+nnoremap <leader>} viWa}Bi{%
+nnoremap <leader>] viWa]Bi[%
+
+"manual surround word
+nnoremap <leader>( viwa)bi(%
+nnoremap <leader>{ viwa}bi{%
+nnoremap <leader>[ viwa]bi[%
+
+"select (charwise) the contents of the current line, excluding indentation.
+nnoremap vv ^vg_
+
+"convert to upper case
+nnoremap <leader>U gUiw
+inoremap <c-u> gUiwea
+
+"do not jump to the next match
+nnoremap * *<c-o>
+
+"yank to end of line
+noremap Y y$
+
+set relativenumber
+
+"yank visual selection to system clipboard
+vnoremap <F11> "+y
+
+"paste from the system clipboard
+nnoremap <F12> "+p
+
+set hlsearch
+set incsearch
+
+"shift lines or selection in normal, input and visual mode
+nnoremap <A-j> :m .+1<CR>
+nnoremap <A-k> :m .-2<CR>
+inoremap <A-j> <Esc>:m .+1<CR>gi
+inoremap <A-k> <Esc>:m .-2<CR>gi
+vnoremap <A-j> :m '>+1<CR>gv
+vnoremap <A-k> :m '<-2<CR>gv
+
+"shift and autoformat lines or selection in normal, input and visual mode
+nnoremap <S-A-j> :m .+1<CR>==
+nnoremap <S-A-k> :m .-2<CR>==
+inoremap <S-A-j> <Esc>:m .+1<CR>==gi
+inoremap <S-A-k> <Esc>:m .-2<CR>==gi
+vnoremap <S-A-j> :m '>+1<CR>gv=gv
+vnoremap <S-A-k> :m '<-2<CR>gv=gv
+
+"convert to upper case
+nnoremap <leader>U gUiw
+inoremap <c-u> gUiwea
+
+"reselect recently pasted area
+nnoremap <leader>v `[v`]
+
+"easy PageUp/Down screen scrolling
+noremap <PageUp> 3
+noremap <PageDown> 3
