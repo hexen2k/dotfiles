@@ -362,7 +362,7 @@ nnoremap <leader>U gUiw
 inoremap <c-u> gUiwea
 
 "reselect recently pasted area
-nnoremap <leader>V V`]
+nnoremap <leader>v `[v`]
 
 "source selection or line immediatelly
 vnoremap <leader>S y:execute @@<cr>
