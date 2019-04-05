@@ -2,76 +2,69 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=$HOME/.vim/bundle/Vundle.vim/
-call vundle#begin('$HOME/.vim/bundle/')
-"call vundle#begin('$USERPROFILE/vimfiles/bundle/')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+set rtp+=$HOME/.vim
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'mhinz/vim-signify'
-Plugin 'dolph/vim-colors-solarized-black'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'uguu-org/vim-matrix-screensaver'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-eunuch'
-Plugin 'dhruvasagar/vim-prosession'
-Plugin 'gikmx/ctrlp-obsession'
-Plugin 'mhinz/vim-grepper'
-" Plugin 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
+Plug 'vim-airline/vim-airline'
+Plug 'mhinz/vim-signify'
+Plug 'dolph/vim-colors-solarized-black'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'uguu-org/vim-matrix-screensaver', { 'on':  'Matrix' }
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-eunuch'
+Plug 'dhruvasagar/vim-prosession'
+Plug 'gikmx/ctrlp-obsession'
+Plug 'mhinz/vim-grepper'
+" Plug 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
 " options and python is required
-Plugin 'mbbill/undotree'
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'vimwiki/vimwiki'
-Plugin 'coderifous/textobj-word-column.vim'
-Plugin 'rickhowe/diffchar.vim'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'markonm/traces.vim'
-Plugin 'sgur/vim-editorconfig'
-Plugin 'w0rp/ale'
-Plugin 'ervandew/supertab'
-Plugin 'simeji/winresizer'
+Plug 'mbbill/undotree'
+Plug 'majutsushi/tagbar'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
+Plug 'vimwiki/vimwiki'
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'rickhowe/diffchar.vim'
+Plug 'rhysd/vim-clang-format'
+Plug 'markonm/traces.vim'
+Plug 'sgur/vim-editorconfig'
+Plug 'w0rp/ale'
+Plug 'ervandew/supertab'
+Plug 'simeji/winresizer'
 
 "TODO: decide whith will remain snipmate/ultisnips/neosnippet
 "vim-snipmate section
-" Plugin 'MarcWeber/vim-addon-mw-utils'
-" Plugin 'tomtom/tlib_vim'
-" Plugin 'garbas/vim-snipmate'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
 
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
-" Plugin 'Shougo/neosnippet.vim'
-" Plugin 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
 
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 "deoplete plugin section
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 "vim script autocomplete
-Plugin 'Shougo/neco-vim'
-
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog  = 'C:\apps\python3\python.exe'
-
+Plug 'Shougo/neco-vim'
 "TODO: check this colorscheme
 "https://github.com/morhetz/gruvbox
 "TODO: refactoring plugin?
@@ -79,37 +72,46 @@ let g:python3_host_prog  = 'C:\apps\python3\python.exe'
 
 "Plugin 'Valloric/YouCompleteMe'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-"Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+" VIM-PLUG MANAGER USAGE:
+" Make sure you use single quotes
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+" Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+
+" Initialize plugin system
+call plug#end()
+
 " Put your non-Plugin stuff after this line
+
+filetype plugin indent on    " required
+
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog  = 'C:\apps\python3\python.exe'
 
 set encoding=utf-8
 set fileencoding=utf-8
