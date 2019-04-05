@@ -65,6 +65,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 "vim script autocomplete
 Plug 'Shougo/neco-vim'
+
 "TODO: check this colorscheme
 "https://github.com/morhetz/gruvbox
 "TODO: refactoring plugin?
@@ -111,7 +112,6 @@ call plug#end()
 filetype plugin indent on    " required
 
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog  = 'C:\apps\python3\python.exe'
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -181,6 +181,7 @@ set viminfo='9999             "store marks for 9999 files, changed for obsession
 
 set undofile
 if has("win32")
+    let g:python3_host_prog  = 'C:\apps\python3\python.exe'
     set undodir=$HOME/.vim/logs/vimundo
 else
     set undodir=~/.vim/logs/vimundo
