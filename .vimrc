@@ -694,6 +694,14 @@ function! s:Hex2dec(line1, line2, arg) range
   endif
 endfunction
 
+" configuration for AutoHotKey scripts
+augroup ahk_script
+    autocmd!
+    autocmd FileType autohotkey
+                \ setlocal commentstring=;%s
+augroup end
+
+
 "TODO:
 "set showmatch
 "skip loading behaviours MSWIN
