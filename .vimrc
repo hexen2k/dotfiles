@@ -44,6 +44,12 @@ Plug 'sgur/vim-editorconfig'
 Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'simeji/winresizer'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'Shougo/deoplete-clangx'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'octref/RootIgnore'
+Plug 'junegunn/goyo.vim'
+Plug 'vim-python/python-syntax'
 
 "TODO: decide whith will remain snipmate/ultisnips/neosnippet
 "vim-snipmate section
@@ -167,7 +173,7 @@ set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
 set linebreak "do not break words
 "change working directory automatically to current opened file
-set autochdir
+" set autochdir
 "include all subdir during search
 set path+=**
 
@@ -701,6 +707,8 @@ augroup ahk_script
                 \ setlocal commentstring=;%s
 augroup end
 
+" vim-python/python-syntax plugin configuration
+let g:python_highlight_all = 1
 
 "TODO:
 "set showmatch
