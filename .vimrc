@@ -46,10 +46,13 @@ Plug 'ervandew/supertab'
 Plug 'simeji/winresizer'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'Shougo/deoplete-clangx'
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'octref/RootIgnore'
 Plug 'junegunn/goyo.vim'
-Plug 'vim-python/python-syntax'
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+
+" python autocomplete
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 
 "TODO: decide whith will remain snipmate/ultisnips/neosnippet
 "vim-snipmate section
@@ -173,7 +176,7 @@ set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
 set linebreak "do not break words
 "change working directory automatically to current opened file
-" set autochdir
+set autochdir
 "include all subdir during search
 set path+=**
 
@@ -185,6 +188,7 @@ set shortmess+=I
 "set viminfo='9999,%             "store marks for 9999 files, remember buffer list
 set viminfo='9999             "store marks for 9999 files, changed for obsession compatibility
 
+set noswapfile
 set undofile
 if has("win32")
     let g:python3_host_prog  = 'C:\apps\python3\python.exe'
@@ -267,7 +271,9 @@ highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
 "better contrast - overwrite setting from solarized plugin - those lines have
 "to be placed after [colorscheme solarized] command
 highlight Normal guifg=LightGray
+highlight Normal ctermfg=LightGray
 highlight Comment guifg=DarkGray
+highlight Comment ctermfg=DarkGray
 
 set cursorline
 set cursorcolumn
@@ -709,6 +715,13 @@ augroup end
 
 " vim-python/python-syntax plugin configuration
 let g:python_highlight_all = 1
+
+" jedi-vim disable completions, instead deoplete-jedi does completions
+" asynchronously
+let g:jedi#completions_enabled = 0
+
+" automaticly reload outside changed file
+set autoread
 
 "TODO:
 "set showmatch
