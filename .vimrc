@@ -599,7 +599,7 @@ packadd! matchit
 
 "exclude regexp patterns for filetypes or filepaths
 let g:editorconfig_blacklist = {
-    \ 'filetype': ['vimrc', '.vimrc'],
+    \ 'filetype': ['vimrc', '.vimrc', '.cfg'],
     \ 'pattern': ['vimrc']}
 
 "grepper plugin configuration
@@ -656,7 +656,7 @@ let g:winresizer_start_key = '<leader>r'
 
 "scrolling offset vertical and horizontal
 set scrolloff=5
-set sidescrolloff=999
+set sidescrolloff=20
 
 " https://vim.fandom.com/wiki/Convert_between_hex_and_decimal
 " USAGE:
