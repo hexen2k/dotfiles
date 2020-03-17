@@ -615,8 +615,8 @@ xmap gs <plug>(GrepperOperator)
 "ALE linter configuration
 nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
-nmap <silent> ]W <Plug>(ale_next)
-nmap <silent> ]w <Plug>(ale_last)
+nmap <silent> ]w <Plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
 " Do not lint or fix can and cin files.
 let g:ale_pattern_options = {
 \ '\.can$': {'ale_linters': [], 'ale_fixers': []},
