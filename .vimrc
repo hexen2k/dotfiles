@@ -503,6 +503,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "different filetype association
 au BufRead,BufNewFile *.can set filetype=c
 au BufRead,BufNewFile *.cin set filetype=c
+autocmd BufRead,BufNewFile *.arg set filetype=tcl
 
 "define how to display non printed characters when 'list' option is active
 set listchars=eol:¬,tab:▸-,
@@ -577,7 +578,7 @@ let g:signify_vcs_list = [ 'git' ]
 
 "vimwiki configuration
 "To use Markdown's wiki markup:
-let g:vimwiki_list = [{'path': '~/vimwiki/',
+let g:vimwiki_list = [{'path': '~/SynologyDrive/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
                   \ '.mkd': 'markdown',
