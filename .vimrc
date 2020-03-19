@@ -578,7 +578,7 @@ let g:signify_vcs_list = [ 'git' ]
 
 "vimwiki configuration
 "To use Markdown's wiki markup:
-let g:vimwiki_list = [{'path': '~/SynologyDrive/vimwiki/',
+let g:vimwiki_list = [{'path': '~/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
                   \ '.mkd': 'markdown',
