@@ -586,6 +586,8 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown',
 "Allow keep custom folding settings
 let g:vimwiki_folding = 'custom'
 map <leader>md :!pandoc %:p -f markdown -t html -s -o %:r.html<CR>
+"set filetype vimwiki to all files with specific directory in the path
+autocmd BufRead,BufNewFile */vimwiki/*.md set filetype=vimwiki
 
 " Keybindings for UltiSnips, all of these are ctrl + key
 let g:UltiSnipsExpandTrigger       = '<c-j>'
