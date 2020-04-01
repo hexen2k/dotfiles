@@ -360,9 +360,6 @@ nnoremap <silent> <Right> :cnfile<CR>
 nnoremap <silent> <leader>c I//
 nnoremap <silent> <leader>C ^xx
 
-"Open file like vim-vinegar.
-nnoremap <silent> - :silent edit <C-R>=empty(expand('%')) ? '.' : fnameescape(expand('%:p:h'))<CR><CR>
-
 "disable last searching results and highlighted words
 nnoremap <silent> <leader><space> :call clearmatches()<CR>:nohlsearch<CR>
 
