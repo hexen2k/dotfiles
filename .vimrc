@@ -778,7 +778,7 @@ nmap <leader>bl :set background=light<CR>
 nmap <leader>bd :set background=dark<CR>
 
 "fugitive: show read only history log buffer
-nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>
+nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>L
 "TODO:
 "set showmatch
 "skip loading behaviours MSWIN
