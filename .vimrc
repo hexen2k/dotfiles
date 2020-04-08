@@ -79,6 +79,8 @@ Plug 'Shougo/neco-vim'
 "https://github.com/morhetz/gruvbox
 "TODO: refactoring plugin?
 "https://github.com/apalmer1377/factorus
+"TODO: vim wrapper for ansynchrous tasks
+" Plug 'skywind3000/asyncrun.vim'
 
 "Plugin 'Valloric/YouCompleteMe'
 
