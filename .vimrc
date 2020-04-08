@@ -773,6 +773,10 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
+"mappings for fast background switching
+nmap <leader>bl :set background=light<CR>
+nmap <leader>bd :set background=dark<CR>
+
 "TODO:
 "set showmatch
 "skip loading behaviours MSWIN
