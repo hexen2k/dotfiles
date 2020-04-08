@@ -30,6 +30,9 @@ nnoremap * *<c-o>
 noremap Y y$
 
 set relativenumber
+set number
+
+noremap <leader><space> :nohlsearch<CR>
 
 "yank visual selection to system clipboard
 vnoremap <F11> "+y
