@@ -277,6 +277,7 @@ highlight Normal guifg=LightGray
 highlight Normal ctermfg=LightGray
 highlight Comment guifg=DarkGray
 highlight Comment ctermfg=DarkGray
+highlight LineNr guifg=yellow
 
 set cursorline
 set cursorcolumn
