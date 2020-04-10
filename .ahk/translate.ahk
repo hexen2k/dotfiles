@@ -167,7 +167,7 @@ BingTranslate(phrase, visibility)
 
 GoogleTranslate_DE_EN(phrase, visibility)
 {
-    SetTimer, Reload_hotkey_label, % TRANSLATION_TIMEOUT_MS
+    SetTimer, Reload_hotkey_label, -5000
     Result =
     base := "https://translate.google.pl/#"
     LangIn := "de"
