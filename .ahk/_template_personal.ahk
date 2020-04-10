@@ -1,0 +1,2 @@
+GVIM_EXE_PATH := "C:\apps\Vim\vim82\gvim.exe"
+EnvGet, GVIM_START_IN_DIR_PATH, USERPROFILE

@@ -1,0 +1,1 @@
+MAIN.ahk is the launcher for the AutoHotKey scripts. If personal.ahk file exists it is included and executed first - it is a place for configuration machine-dependent paths, settings and other things.
