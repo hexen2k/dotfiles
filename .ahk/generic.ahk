@@ -106,3 +106,16 @@ else
     UserInput := StrReplace(UserInput, A_Space, "%20")
     run https://www.filmweb.pl/search?q="%UserInput%"
 return
+
+; search currently selected word on diki.pl dictionary page
+; shortcut: Ctrl+left_Alt+d
+^<!d::
+clipSave := Clipboard
+Send, ^c
+sleep, 150
+StringReplace, Clipboard, Clipboard, `r`n, `n, All ;Fix for SendInput sending Windows linebreaks
+SelectedText := Clipboard
+SelectedText := StrReplace(SelectedText, A_Space, "%20")
+run https://www.diki.pl/slownik-angielskiego?q="%SelectedText%"
+Clipboard := clipSave
+Return
