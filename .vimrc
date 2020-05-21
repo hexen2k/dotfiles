@@ -16,7 +16,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'uguu-org/vim-matrix-screensaver', { 'on':  'Matrix' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -372,10 +371,6 @@ inoremap <c-b> <c-o>yiW<End>=<c-r>=<c-r>0<cr>
 vmap <leader>( c(jkpa)jk
 vmap <leader>[ c[jkpa]jk
 vmap <leader>{ c{jkpa}jk
-
-" indent-guides plugin configuration
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
 
 " ack plugin configuration
 let g:ackprg = 'ag --nogroup --nocolor --column' "change Ack to Ag (silver searcher)
