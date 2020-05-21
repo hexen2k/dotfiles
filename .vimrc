@@ -587,7 +587,7 @@ let g:ale_pattern_options = {
 \ '\.cin$': {'ale_linters': [], 'ale_fixers': []},
 \}
 
-snipmate plugin configuration
+" snipmate plugin configuration
 imap <c-j> <Plug>snipMateNextOrTrigger
 smap <C-j> <Plug>snipMateNextOrTrigger
 imap <c-k> <Plug>snipMateBack
