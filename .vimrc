@@ -41,7 +41,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'markonm/traces.vim'
 Plug 'sgur/vim-editorconfig'
 Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
 Plug 'simeji/winresizer'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'octref/RootIgnore'
@@ -600,20 +599,6 @@ let g:ale_pattern_options = {
 \ '\.cin$': {'ale_linters': [], 'ale_fixers': []},
 \}
 
-" supertab plugin configuration
-let g:SuperTabDefaultCompletionType = 'context'
-augroup omnifuncs
-    autocmd!
-    autocmd FileType *
-                \ if &omnifunc != '' |
-                \   call SuperTabChain(&omnifunc, "<c-n>") |
-                \ endif
-augroup end
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabClosePreviewOnPopupClose = 1
-" close popup window with <CR> key
-" inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
-
 " snipmate plugin configuration
 " imap <c-j> <Plug>snipMateNextOrTrigger
 " smap <C-j> <Plug>snipMateNextOrTrigger
@@ -693,7 +678,6 @@ augroup end
 
 " vim-python/python-syntax plugin configuration
 let g:python_highlight_all = 1
-
 
 " automaticly reload outside changed file
 set autoread
