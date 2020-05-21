@@ -48,15 +48,12 @@ Plug 'octref/RootIgnore'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 
-" vim-snipmate section - it has no external python dependencies
+" vim-snipmate section
 Plug 'garbas/vim-snipmate'
 Plug 'MarcWeber/vim-addon-mw-utils' "required for snipmate
 Plug 'tomtom/tlib_vim' "required for snipmate
 
-" python required
-" Plug 'SirVer/ultisnips'
-
-" snippet files for snipmate and ultisnips
+" snippet files for snipmate
 Plug 'honza/vim-snippets'
 
 " deoplete plugin section
@@ -590,11 +587,6 @@ map <leader>md :!pandoc %:p -f markdown -t html -s -o %:r.html<CR>
 " set filetype vimwiki to all files with specific directory in the path
 autocmd BufRead,BufNewFile */vimwiki/*.md set filetype=vimwiki
 
-" Keybindings for UltiSnips, all of these are ctrl + key
-let g:UltiSnipsExpandTrigger       = '<c-j>'
-let g:UltiSnipsListSnippets        = '<c-l>'
-let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 " for proper searching user defined snippets
 set rtp+=~/.vim
 
