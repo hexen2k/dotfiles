@@ -101,7 +101,6 @@ set termencoding=utf-8
 
 set langmenu=en_US
 let $LANG = 'en_US'
-language en
 
 set lazyredraw
 
