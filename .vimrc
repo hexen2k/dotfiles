@@ -102,7 +102,6 @@ call plug#end()
 
 filetype plugin indent on    " required
 
-let g:deoplete#enable_at_startup = 1
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -695,9 +694,6 @@ augroup end
 " vim-python/python-syntax plugin configuration
 let g:python_highlight_all = 1
 
-" jedi-vim disable completions, instead deoplete-jedi does completions
-" asynchronously
-let g:jedi#completions_enabled = 0
 
 " automaticly reload outside changed file
 set autoread
