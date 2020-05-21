@@ -149,8 +149,8 @@ set wildignore+=*.cbf,*.gen,*.pdf,*.zip,*.7z,*.blf,*.db
 set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
 set linebreak "do not break words
-" change working directory automatically to current opened file
-set autochdir
+" NO change working directory automatically to current opened file
+set noautochdir
 " include all subdir during search
 set path+=**
 
