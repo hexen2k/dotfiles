@@ -333,9 +333,9 @@ nnoremap <F12> "+p
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 "corrections for functions with curly braces at the end of line
-map [[ ?{<CR>w99[{\<SPACE>zt<C-y>
+map [[ ?{<CR>w99[{\<SPACE>
 map ][ /}<CR>b99]}\<SPACE>
-map ]] j0[[%/{<CR>\<SPACE>zt<C-y>
+map ]] j0[[%/{<CR>\<SPACE>
 map [] k$][%?}<CR>\<SPACE>
 
 "edit and source vimrc file
