@@ -37,12 +37,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'rickhowe/diffchar.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'markonm/traces.vim'
+Plug 'markonm/traces.vim' " highlights patterns and ranges for Ex commands in Command-line mode
 Plug 'sgur/vim-editorconfig'
 Plug 'w0rp/ale'
 Plug 'simeji/winresizer'
 Plug 'bfrg/vim-cpp-modern'
-Plug 'octref/RootIgnore'
+Plug 'octref/RootIgnore' " Set 'wildignore' from git repo root or home folder
 Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 
