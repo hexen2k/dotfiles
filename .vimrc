@@ -49,9 +49,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 
 " vim-snipmate section
-Plug 'garbas/vim-snipmate'
-Plug 'MarcWeber/vim-addon-mw-utils' "required for snipmate
-Plug 'tomtom/tlib_vim' "required for snipmate
+Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
 
 " snippet files for snipmate
 Plug 'honza/vim-snippets'
