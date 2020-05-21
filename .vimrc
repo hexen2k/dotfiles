@@ -33,7 +33,6 @@ Plug 'mhinz/vim-grepper'
 " options and python is required
 Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'vimwiki/vimwiki'
 Plug 'coderifous/textobj-word-column.vim'
@@ -45,35 +44,36 @@ Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'simeji/winresizer'
 Plug 'bfrg/vim-cpp-modern'
-Plug 'Shougo/deoplete-clangx'
 Plug 'octref/RootIgnore'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 
-" python autocomplete
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
+" vim-snipmate section - it has no external python dependencies
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils' "required for snipmate
+Plug 'tomtom/tlib_vim' "required for snipmate
 
-"TODO: decide whith will remain snipmate/ultisnips/neosnippet
-"vim-snipmate section
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
+" python required
+" Plug 'SirVer/ultisnips'
 
-Plug 'SirVer/ultisnips'
-
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-
+"snippet files for snipmate and ultisnips
 Plug 'honza/vim-snippets'
 
 "deoplete plugin section
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
 
 "vim script autocomplete
-Plug 'Shougo/neco-vim'
+" Plug 'Shougo/neco-vim'
+
+" C/CPP completion for deoplete using clang
+" Plug 'Shougo/deoplete-clangx'
+
+" python autocomplete
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
+
 
 "TODO: check this colorscheme
 "https://github.com/morhetz/gruvbox
