@@ -56,15 +56,15 @@ Plug 'tomtom/tlib_vim' "required for snipmate
 " python required
 " Plug 'SirVer/ultisnips'
 
-"snippet files for snipmate and ultisnips
+" snippet files for snipmate and ultisnips
 Plug 'honza/vim-snippets'
 
-"deoplete plugin section
+" deoplete plugin section
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'roxma/nvim-yarp'
 " Plug 'roxma/vim-hug-neovim-rpc'
 
-"vim script autocomplete
+" vim script autocomplete
 " Plug 'Shougo/neco-vim'
 
 " C/CPP completion for deoplete using clang
@@ -75,14 +75,14 @@ Plug 'honza/vim-snippets'
 " Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 
 
-"TODO: check this colorscheme
-"https://github.com/morhetz/gruvbox
-"TODO: refactoring plugin?
-"https://github.com/apalmer1377/factorus
-"TODO: vim wrapper for ansynchrous tasks
+" TODO: check this colorscheme
+" https://github.com/morhetz/gruvbox
+" TODO: refactoring plugin?
+" https://github.com/apalmer1377/factorus
+" TODO: vim wrapper for ansynchrous tasks
 " Plug 'skywind3000/asyncrun.vim'
 
-"Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 
 " VIM-PLUG MANAGER USAGE:
@@ -139,12 +139,12 @@ set relativenumber
 set nrformats=bin,hex
 
 set hidden
-"allow moving the cursor freely during blockwise operation
+" allow moving the cursor freely during blockwise operation
 set virtualedit+=block
-"auto-pairs delete_in_pair feature fix (obligatory backspace=start),
-"allow backspaces everywhere
+" auto-pairs delete_in_pair feature fix (obligatory backspace=start),
+" allow backspaces everywhere
 set backspace=indent,eol,start
-"auto-pairs Fly mode ON
+" auto-pairs Fly mode ON
 let g:AutoPairsFlyMode = 1
 
 set wrapscan
@@ -153,7 +153,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-"set cindent"with vertical item list separated by commas, there is an isse with unwanted identation
+" set cindent"with vertical item list separated by commas, there is an isse with unwanted identation
 syntax enable
 
 set tabstop=4
@@ -164,10 +164,10 @@ set expandtab
 set showcmd
 set wildmenu
 set wildmode=list,full
-"allows you to search for foo and find Foo
+" allows you to search for foo and find Foo
 set wildignorecase
 
-"wildmenu ignore filename mask
+" wildmenu ignore filename mask
 set wildignore=*.swp,*.bak
 set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
 set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
@@ -178,9 +178,9 @@ set wildignore+=*.cbf,*.gen,*.pdf,*.zip,*.7z,*.blf,*.db
 set splitbelow "command :sp insert new window below active one
 set splitright "command :vs inserts new window on the right side
 set linebreak "do not break words
-"change working directory automatically to current opened file
+" change working directory automatically to current opened file
 set autochdir
-"include all subdir during search
+" include all subdir during search
 set path+=**
 
 set foldenable
@@ -188,7 +188,7 @@ set foldlevelstart=0
 set foldnestmax=10
 
 set shortmess+=I
-"set viminfo='9999,%             "store marks for 9999 files, remember buffer list
+" set viminfo='9999,%             "store marks for 9999 files, remember buffer list
 set viminfo='9999             "store marks for 9999 files, changed for obsession compatibility
 
 set noswapfile
@@ -205,17 +205,17 @@ set undoreload=10000
 
 set laststatus=2 "always show status line
 
-"airline plugin option
+" airline plugin option
 let g:airline_powerline_fonts = 1
-"Automatically displays all buffers when there's only one tab open.
+" Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
-"prepend a '$' when vim-obsession is enabled
+" prepend a '$' when vim-obsession is enabled
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 
-"CtrlPObsession plugin config
+" CtrlPObsession plugin config
 nnoremap <Leader>ss :CtrlPObsession<CR>
 
-"font settings
+" font settings
 if has("win32")
     set guifont=DejaVu_Sans_Mono_for_Powerline:h10
 else
@@ -226,7 +226,7 @@ set background=dark
 
 silent! colorscheme solarized
 
-"tricky way to check if solarized colorscheme is available
+" tricky way to check if solarized colorscheme is available
 if exists(":SolarizedOptions")
     "turn off italic fonts (e.g. used in comment sections)
     let g:solarized_italic = 0
@@ -269,10 +269,10 @@ else "terminal mode/no gui
 endif
 
 colorscheme solarized
-"set proper colour of signcolumn - broken by solarized colorscheme
+" set proper colour of signcolumn - broken by solarized colorscheme
 highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
-"better contrast - overwrite setting from solarized plugin - those lines have
-"to be placed after [colorscheme solarized] command
+" better contrast - overwrite setting from solarized plugin - those lines have
+" to be placed after [colorscheme solarized] command
 highlight Normal guifg=LightGray
 highlight Normal ctermfg=LightGray
 highlight Comment guifg=DarkGray
@@ -282,7 +282,7 @@ highlight LineNr guifg=yellow
 set cursorline
 set cursorcolumn
 
-"shift lines or selection in normal, input and visual mode
+" shift lines or selection in normal, input and visual mode
 nnoremap <A-j> :m .+1<CR>
 nnoremap <A-k> :m .-2<CR>
 inoremap <A-j> <Esc>:m .+1<CR>gi
@@ -290,7 +290,7 @@ inoremap <A-k> <Esc>:m .-2<CR>gi
 vnoremap <A-j> :m '>+1<CR>gv
 vnoremap <A-k> :m '<-2<CR>gv
 
-"shift and autoformat lines or selection in normal, input and visual mode
+" shift and autoformat lines or selection in normal, input and visual mode
 nnoremap <S-A-j> :m .+1<CR>==
 nnoremap <S-A-k> :m .-2<CR>==
 inoremap <S-A-j> <Esc>:m .+1<CR>==gi
@@ -298,108 +298,108 @@ inoremap <S-A-k> <Esc>:m .-2<CR>==gi
 vnoremap <S-A-j> :m '>+1<CR>gv=gv
 vnoremap <S-A-k> :m '<-2<CR>gv=gv
 
-"when you forgot to sudo before editing a file that requires root privileges
+" when you forgot to sudo before editing a file that requires root privileges
 cmap w!! w !sudo tee % >/dev/null
 
-"change to current file working directory
+" change to current file working directory
 nnoremap <F1> :cd %:p:h<CR>:pwd<CR>
 
-"show differences between current and saved versions
+" show differences between current and saved versions
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 nnoremap <F2> :DiffOrig<CR><c-w>r
 
-"show/hide NERDTree pane on the left
+" show/hide NERDTree pane on the left
 nnoremap <F5> :NERDTreeToggle<cr>
 
-"show/hide Undotree pane on the left
+" show/hide Undotree pane on the left
 nnoremap <F6> :UndotreeToggle<CR>
 
-"show/hide Tagbar pane on the right (function list)
+" show/hide Tagbar pane on the right (function list)
 nnoremap <F7> :TagbarToggle<CR>
 
-"write, compile, program
+" write, compile, program
 nnoremap <F9> :w<CR>:make all<CR><CR>:make program<CR><CR>
 
-"build the cross-reference recursively
+" build the cross-reference recursively
 nnoremap <F10> :!cd %:p:h & cscope -Rb<CR>
 
-"yank visual selection to system clipboard
+" yank visual selection to system clipboard
 vnoremap <F11> "+y
 
-"paste from the system clipboard
+" paste from the system clipboard
 nnoremap <F12> "+p
 
-"cscope configuration
+" cscope configuration
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
-"corrections for functions with curly braces at the end of line
+" corrections for functions with curly braces at the end of line
 map [[ ?{<CR>w99[{\<SPACE>
 map ][ /}<CR>b99]}\<SPACE>
 map ]] j0[[%/{<CR>\<SPACE>
 map [] k$][%?}<CR>\<SPACE>
 
-"edit and source vimrc file
+" edit and source vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>G
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-"map ESCAPE key to convenient method
+" map ESCAPE key to convenient method
 inoremap jk 
 
-"remove trailing spaces from specified type of files during writing
+" remove trailing spaces from specified type of files during writing
 autocmd BufWritePre *.{c,cpp,h} %s/\s\+$//e
 
-"repeat last command with the ENTER key
+" repeat last command with the ENTER key
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
-"yank to end of line
+" yank to end of line
 noremap Y y$
 
-"fix window mappings
+" fix window mappings
 nnoremap <silent> <Up> :cprevious<CR>
 nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
 nnoremap <silent> <Right> :cnfile<CR>
 
-"simple mappings for commenting line
+" simple mappings for commenting line
 nnoremap <silent> <leader>c I//
 nnoremap <silent> <leader>C ^xx
 
-"disable last searching results and highlighted words
+" disable last searching results and highlighted words
 nnoremap <silent> <leader><space> :call clearmatches()<CR>:nohlsearch<CR>
 
-"do not jump to the next match
+" do not jump to the next match
 nnoremap * *<c-o>
 
-"delete white spaces at the end of the line and set cursor on previous position
+" delete white spaces at the end of the line and set cursor on previous position
 nnoremap <leader>w mm:%s/\s\+$//<cr>:let @/=''<cr>`m
 
-"convert to upper case
+" convert to upper case
 nnoremap <leader>U gUiw
 inoremap <c-u> gUiwea
 
-"reselect recently pasted area
+" reselect recently pasted area
 nnoremap <leader>v `[v`]
 
-"source selection or line immediatelly
+" source selection or line immediatelly
 vnoremap <leader>S y:execute @@<cr>
 nnoremap <leader>S ^vg_y:execute @@<cr>
 
-"select (charwise) the contents of the current line, excluding indentation.
+" select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_
 
-"simple calculator
+" simple calculator
 inoremap <c-b> <c-o>yiW<End>=<c-r>=<c-r>0<cr>
 
-"visvim manual surround
+" visvim manual surround
 vmap <leader>( c(jkpa)jk
 vmap <leader>[ c[jkpa]jk
 vmap <leader>{ c{jkpa}jk
 
-"indent-guides plugin configuration
+" indent-guides plugin configuration
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
-"ack plugin configuration
+" ack plugin configuration
 let g:ackprg = 'ag --nogroup --nocolor --column' "change Ack to Ag (silver searcher)
 
 " Highlight Word {{{
@@ -501,45 +501,45 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " }}}
 
-"different filetype association
+" different filetype association
 au BufRead,BufNewFile *.can set filetype=c
 au BufRead,BufNewFile *.cin set filetype=c
 autocmd BufRead,BufNewFile *.arg set filetype=tcl
 
-"define how to display non printed characters when 'list' option is active
+" define how to display non printed characters when 'list' option is active
 set listchars=eol:¬,tab:▸-,
 
-"switching between buffers
+" switching between buffers
 nnoremap <C-Tab> :bnext<cr>
 nnoremap <C-S-Tab> :bprev<cr>
 
-"mark and move up completed task
+" mark and move up completed task
 nnoremap <leader>u jmmk^r+ddgg}P'm
 
-"paste actual date in following format: 2017-03-25
+" paste actual date in following format: 2017-03-25
 nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 
-"surround with {} braces - obsolete, surround plugin does the same
+" surround with {} braces - obsolete, surround plugin does the same
 nnoremap <leader>{ viWa}Bi{%
 
-"mappings for visual block selections with mouse clicking
+" mappings for visual block selections with mouse clicking
 nnoremap <A-S-LeftMouse> mz<LeftMouse><C-v>g`zo<C-g>
 inoremap <A-S-LeftMouse> <Esc><C-v>g`^mz<Esc>gi<LeftMouse><C-o><C-v>g`zo<C-g>
 vnoremap <A-S-LeftDrag> <LeftDrag>
 vnoremap <A-S-LeftMouse> <C-v><LeftMouse>mzgvg`z<C-g>
 
-"VERY SIMPLE mapping
-"create ticket
+" VERY SIMPLE mapping
+" create ticket
 nnoremap <leader>ct IFZD :<cr><cr>Test scenario:<cr><cr>Expected:<cr><cr>Observed:ggf:i
-"insert hardware version
+" insert hardware version
 inoremap <leader>ih I391_KKL_GR_3Bt_Or
-"insert visual arrow pointer
+" insert visual arrow pointer
 inoremap <- <---
-"parse time buffer
+" parse time buffer
 map <leader>pt :so ~\.vim\myscripts\parseTimeV2.vim<CR>
 
-"quick font resizing
+" quick font resizing
 if has("unix")
     function! FontSizePlus ()
       let l:gf_size_whole = matchstr(&guifont, '\( \)\@<=\d\+$')
@@ -577,17 +577,17 @@ endif
 
 let g:signify_vcs_list = [ 'git' ]
 
-"vimwiki configuration
-"To use Markdown's wiki markup:
+" vimwiki configuration
+" To use Markdown's wiki markup:
 let g:vimwiki_list = [{'path': '~/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
                   \ '.mkd': 'markdown',
                   \ '.wiki': 'media'}
-"Allow keep custom folding settings
+" Allow keep custom folding settings
 let g:vimwiki_folding = 'custom'
 map <leader>md :!pandoc %:p -f markdown -t html -s -o %:r.html<CR>
-"set filetype vimwiki to all files with specific directory in the path
+" set filetype vimwiki to all files with specific directory in the path
 autocmd BufRead,BufNewFile */vimwiki/*.md set filetype=vimwiki
 
 " Keybindings for UltiSnips, all of these are ctrl + key
@@ -595,27 +595,27 @@ let g:UltiSnipsExpandTrigger       = '<c-j>'
 let g:UltiSnipsListSnippets        = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-"for proper searching user defined snippets
+" for proper searching user defined snippets
 set rtp+=~/.vim
 
-"enable extended % jumping functionality
+" enable extended % jumping functionality
 packadd! matchit
 
-"exclude regexp patterns for filetypes or filepaths
+" exclude regexp patterns for filetypes or filepaths
 let g:editorconfig_blacklist = {
     \ 'filetype': ['vimrc', '.vimrc', '.cfg'],
     \ 'pattern': ['vimrc']}
 
-"grepper plugin configuration
+" grepper plugin configuration
 let g:grepper = {}
 let g:grepper.tools = ['rg','git','grep']
-"search for the current word
+" search for the current word
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
-"search for the current selection
+" search for the current selection
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-"ALE linter configuration
+" ALE linter configuration
 nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
@@ -626,7 +626,7 @@ let g:ale_pattern_options = {
 \ '\.cin$': {'ale_linters': [], 'ale_fixers': []},
 \}
 
-"supertab plugin configuration
+" supertab plugin configuration
 let g:SuperTabDefaultCompletionType = 'context'
 augroup omnifuncs
     autocmd!
@@ -640,25 +640,25 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " close popup window with <CR> key
 " inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
-"snipmate plugin configuration
-"imap <c-j> <Plug>snipMateNextOrTrigger
-"smap <C-j> <Plug>snipMateNextOrTrigger
-"imap <c-k> <Plug>snipMateBack
-"smap <c-k> <Plug>snipMateBack
+" snipmate plugin configuration
+" imap <c-j> <Plug>snipMateNextOrTrigger
+" smap <C-j> <Plug>snipMateNextOrTrigger
+" imap <c-k> <Plug>snipMateBack
+" smap <c-k> <Plug>snipMateBack
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-"easy PageUp/Down screen scrolling
+" easy PageUp/Down screen scrolling
 noremap <PageUp> 3
 noremap <PageDown> 3
 
-"start window resize mode
+" start window resize mode
 let g:winresizer_start_key = '<leader>r'
 
-"scrolling offset vertical and horizontal
+" scrolling offset vertical and horizontal
 set scrolloff=5
 set sidescrolloff=20
 
@@ -774,17 +774,17 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
-"mappings for fast background switching
+" mappings for fast background switching
 nmap <leader>bl :set background=light<CR>
 nmap <leader>bd :set background=dark<CR>
 
-"fugitive: show read only history log buffer
+" fugitive: show read only history log buffer
 nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>L
-"TODO:
-"set showmatch
-"skip loading behaviours MSWIN
-"let g:skip_loading_mswin = 1
-"set cindent only for the C source code family
+" TODO:
+" set showmatch
+" skip loading behaviours MSWIN
+" let g:skip_loading_mswin = 1
+" set cindent only for the C source code family
 
 set rtp-=$HOME/vimfiles
 
