@@ -28,8 +28,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'gikmx/ctrlp-obsession'
 Plug 'mhinz/vim-grepper'
-" Plug 'sjl/gundo.vim' "more friendly diff mode, but less shortcut keys
-" options and python is required
 Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
@@ -55,12 +53,8 @@ Plug 'honza/vim-snippets'
 
 " TODO: check this colorscheme
 " https://github.com/morhetz/gruvbox
-" TODO: refactoring plugin?
-" https://github.com/apalmer1377/factorus
 " TODO: vim wrapper for ansynchrous tasks
 " Plug 'skywind3000/asyncrun.vim'
-
-" Plugin 'Valloric/YouCompleteMe'
 
 
 " VIM-PLUG MANAGER USAGE:
