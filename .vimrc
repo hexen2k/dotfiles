@@ -54,21 +54,6 @@ Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/
 " snippet files for snipmate
 Plug 'honza/vim-snippets'
 
-" deoplete plugin section
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'roxma/nvim-yarp'
-" Plug 'roxma/vim-hug-neovim-rpc'
-
-" vim script autocomplete
-" Plug 'Shougo/neco-vim'
-
-" C/CPP completion for deoplete using clang
-" Plug 'Shougo/deoplete-clangx'
-
-" python autocomplete
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-" Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
-
 
 " TODO: check this colorscheme
 " https://github.com/morhetz/gruvbox
