@@ -43,6 +43,7 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'octref/RootIgnore' " Set 'wildignore' from git repo root or home folder
 Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'machakann/vim-highlightedyank' " highlight yanked region
 
 " vim-snipmate section
 Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
@@ -723,6 +724,10 @@ nmap <leader>bd :set background=dark<CR>
 
 " fugitive: show read only history log buffer
 nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>L
+
+" highlightedyank yank time
+let g:highlightedyank_highlight_duration = 200
+
 " TODO:
 " set showmatch
 " skip loading behaviours MSWIN
