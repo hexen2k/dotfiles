@@ -44,6 +44,7 @@ Plug 'octref/RootIgnore' " Set 'wildignore' from git repo root or home folder
 Plug 'junegunn/goyo.vim'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'machakann/vim-highlightedyank' " highlight yanked region
+Plug 'romainl/vim-cool' "disables search highlighting when you are done searching and re-enables it when you search again
 
 " vim-snipmate section
 Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
@@ -727,6 +728,14 @@ nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>L
 
 " highlightedyank yank time
 let g:highlightedyank_highlight_duration = 200
+
+" vim-cool plugin configuration
+" BUG: probably if search word is in the first line this plugin disable
+" highlighting automaticaly, you have to press n key as workaround
+" Show number of matches in the command-line (/plug match N of X)
+ let g:CoolTotalMatches = 1
+" restore proper word highlighting searched by * (broken by vim-cool plugin)
+nnoremap * viwo*N
 
 " TODO:
 " set showmatch
