@@ -36,7 +36,7 @@ Plug 'coderifous/textobj-word-column.vim'
 Plug 'rickhowe/diffchar.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'markonm/traces.vim' " highlights patterns and ranges for Ex commands in Command-line mode
-Plug 'sgur/vim-editorconfig'
+" Plug 'sgur/vim-editorconfig'
 Plug 'w0rp/ale'
 Plug 'simeji/winresizer'
 Plug 'bfrg/vim-cpp-modern'
