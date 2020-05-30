@@ -743,6 +743,12 @@ nnoremap <silent> <leader>sw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-
 " swap word objects backwards
 nnoremap <silent> <leader>SW "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
+" swap paragraph with the next
+nnoremap <leader>sp {dap}Pj
+
+" swap paragraph with the previous
+nnoremap <leader>SP {dap{Pj
+
 " TODO:
 " set showmatch
 " skip loading behaviours MSWIN
