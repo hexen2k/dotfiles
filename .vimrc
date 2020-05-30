@@ -738,10 +738,10 @@ let g:highlightedyank_highlight_duration = 200
 nnoremap * viwo*N
 
 " swap word objects forwards
-nnoremap <leader>sw :set nohlsearch<CR>:set nowrapscan<CR>"wdiwd/\w\+<CR>viwp"wp:let @/ = ""<CR>:set wrapscan<CR>:set hlsearch<CR>
+nnoremap <silent> <leader>sw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
 
-" swap word objects backwards (logic based on above forwards implementation)
-nnoremap <leader>SW :set nohlsearch<CR>:set nowrapscan<CR>viwo?\w\+<CR>"wdiwd/\w\+<CR>viwp"wpviwo?\w\+<CR>:let @/ = ""<CR>:set wrapscan<CR>:set hlsearch<CR>
+" swap word objects backwards
+nnoremap <silent> <leader>SW "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
 " TODO:
 " set showmatch
