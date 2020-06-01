@@ -753,9 +753,9 @@ nnoremap <leader>SP {dap{Pj
 " swap using visual selection
 " To use this mapping: first, delete some text (using a command such as daw or
 " dt in normal mode, or x in visual mode). Then, use visual mode to select
-" some other text, and press Ctrl-X. The two pieces of text should then be
+" some other text, and press Ctrl-S. The two pieces of text should then be
 " swapped.
-vnoremap <C-X> <Esc>`.``gvP``P
+vnoremap <C-S> <Esc>`.``gvP``P
 
 " TODO:
 " set showmatch
