@@ -499,14 +499,8 @@ vnoremap <A-S-LeftDrag> <LeftDrag>
 vnoremap <A-S-LeftMouse> <C-v><LeftMouse>mzgvg`z<C-g>
 
 " VERY SIMPLE mapping
-" create ticket
-nnoremap <leader>ct IFZD :<cr><cr>Test scenario:<cr><cr>Expected:<cr><cr>Observed:ggf:i
-" insert hardware version
-inoremap <leader>ih I391_KKL_GR_3Bt_Or
 " insert visual arrow pointer
 inoremap <- <---
-" parse time buffer
-map <leader>pt :so ~\.vim\myscripts\parseTimeV2.vim<CR>
 
 " quick font resizing
 if has("unix")
