@@ -742,12 +742,12 @@ nnoremap <leader>sp {dap}Pj
 " swap paragraph with the previous
 nnoremap <leader>SP {dap{Pj
 
-" swap using visual selection
+" swap/Replace using visual selection
 " To use this mapping: first, delete some text (using a command such as daw or
 " dt in normal mode, or x in visual mode). Then, use visual mode to select
-" some other text, and press Ctrl-S. The two pieces of text should then be
+" some other text, and press Ctrl-R. The two pieces of text should then be
 " swapped.
-vnoremap <C-S> <Esc>`.``gvP``P
+vnoremap <C-R> <Esc>`.``gvP``P
 
 " TODO:
 " set showmatch
