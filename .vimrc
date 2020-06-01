@@ -46,6 +46,7 @@ Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'machakann/vim-highlightedyank' " highlight yanked region
 Plug 'romainl/vim-cool' " disables search highlighting when you are done searching and re-enables it when you search again
 Plug 'tommcdo/vim-exchange' " easy text exchange operator
+Plug 'andymass/vim-matchup' " highlight, navigate, and operate on sets of matching text
 
 " vim-snipmate section
 Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
@@ -555,9 +556,6 @@ autocmd BufRead,BufNewFile */vimwiki/*.md set filetype=vimwiki
 
 " for proper searching user defined snippets
 set rtp+=~/.vim
-
-" enable extended % jumping functionality
-packadd! matchit
 
 " exclude regexp patterns for filetypes or filepaths
 let g:editorconfig_blacklist = {
