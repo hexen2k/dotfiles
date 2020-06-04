@@ -8,7 +8,7 @@ set rtp+=$HOME/.vim
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'dolph/vim-colors-solarized-black'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -178,6 +178,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " prepend a '$' when vim-obsession is enabled
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+" straight separator for tabs on bottm bar
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" path formatter (upper bar)
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " CtrlPObsession plugin config
 nnoremap <Leader>ss :CtrlPObsession<CR>
