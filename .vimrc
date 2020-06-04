@@ -728,6 +728,21 @@ endfunction
 call SetMyColoursForDarkMode()
 call DefineColoursForCustomHighlights()
 
+" diffchar plugin configuration
+" matching colours for changed units, use 8 colours in fixed order
+let g:DiffColors = 2
+" visibility of corresponding diff units, popup/floating window at cursor
+" position
+let g:DiffPairVisible = 3
+" Jump cursor to the start position of the next difference unit, default: ]b
+nmap <leader>b <Plug>JumpDiffCharNextStart
+" Jump cursor to the start position of the previous difference unit, default: [b
+nmap <leader>B <Plug>JumpDiffCharPrevStart
+" Jump cursor to the end position of the next difference unit, default: ]e
+nmap <leader>e <Plug>JumpDiffCharNextEnd
+" Jump cursor to the end position of the previous difference unit, default: [e
+nmap <leader>E <Plug>JumpDiffCharPrevEnd
+
 " asyncrun plugin configuration
 " vim-fugitive Gpush and Gfetch started with asyncrun
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
