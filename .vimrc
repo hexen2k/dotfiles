@@ -327,10 +327,6 @@ nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
 nnoremap <silent> <Right> :cnfile<CR>
 
-" simple mappings for commenting line
-nnoremap <silent> <leader>c I//
-nnoremap <silent> <leader>C ^xx
-
 " disable last searching results and highlighted words
 nnoremap <silent> <leader><space> :call clearmatches()<CR>:nohlsearch<CR>
 
