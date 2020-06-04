@@ -47,6 +47,7 @@ Plug 'machakann/vim-highlightedyank' " highlight yanked region
 Plug 'romainl/vim-cool' " disables search highlighting when you are done searching and re-enables it when you search again
 Plug 'tommcdo/vim-exchange' " easy text exchange operator
 Plug 'andymass/vim-matchup' " highlight, navigate, and operate on sets of matching text
+Plug 'skywind3000/asyncrun.vim' " vim wrapper for ansynchrous tasks
 
 " vim-snipmate section
 Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
@@ -260,7 +261,10 @@ nnoremap <F7> :TagbarToggle<CR>
 nnoremap <F9> :w<CR>:make all<CR><CR>:make program<CR><CR>
 
 " build the cross-reference recursively
-nnoremap <F10> :!cd %:p:h & cscope -Rb<CR>
+" nnoremap <F10> :!cd %:p:h & cscope -Rb<CR>
+
+" build tags file for the project
+nnoremap <F10> :AsyncRun ctags -R -f $(VIM_ROOT)/tags $(VIM_ROOT)<CR>
 
 " yank visual selection to system clipboard
 vnoremap <F11> "+y
@@ -723,6 +727,16 @@ endfunction
 
 call SetMyColoursForDarkMode()
 call DefineColoursForCustomHighlights()
+
+" asyncrun plugin configuration
+" vim-fugitive Gpush and Gfetch started with asyncrun
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+" vim-airline displaying the status of AsyncRun
+let g:asyncrun_status = ''
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+" automatically open quickfix window when AsyncRun command is executed
+" set the quickfix window 6 lines height.
+let g:asyncrun_open = 6
 
 " TODO:
 " set cindent only for the C source code family
