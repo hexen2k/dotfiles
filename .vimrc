@@ -371,7 +371,7 @@ endfunction
 
 function! VisualHiInterestingWord(n)
     " Save our location.
-"    normal! mz
+    normal! mz
 
     " Yank the current selection into the z register.
     normal! gv"zy
