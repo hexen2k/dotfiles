@@ -470,7 +470,7 @@ au BufRead,BufNewFile *.cin set filetype=c
 autocmd BufRead,BufNewFile *.arg set filetype=tcl
 
 " define how to display non printed characters when 'list' option is active
-set listchars=eol:¬,tab:▸-,
+set listchars=eol:¬,tab:▸-,trail:˽
 
 " switching between buffers
 nnoremap <C-Tab> :bnext<cr>
