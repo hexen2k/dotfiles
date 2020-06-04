@@ -173,18 +173,6 @@ set undoreload=10000
 
 set laststatus=2 "always show status line
 
-" airline plugin option
-let g:airline_powerline_fonts = 1
-" Automatically displays all buffers when there's only one tab open.
-let g:airline#extensions#tabline#enabled = 1
-" prepend a '$' when vim-obsession is enabled
-let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
-" straight separator for tabs on bottm bar
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" path formatter (upper bar)
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
 " CtrlPObsession plugin config
 nnoremap <Leader>ss :CtrlPObsession<CR>
 
@@ -752,6 +740,18 @@ let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status
 " automatically open quickfix window when AsyncRun command is executed
 " set the quickfix window 6 lines height.
 let g:asyncrun_open = 6
+
+" airline plugin option
+let g:airline_powerline_fonts = 1
+" Automatically displays all buffers when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+" prepend a '$' when vim-obsession is enabled
+let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+" straight separator for tabs on bottm bar
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" path formatter (upper bar)
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " TODO:
 " set cindent only for the C source code family
