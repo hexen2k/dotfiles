@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
-Plug 'dolph/vim-colors-solarized-black'
+Plug 'chriskempson/tomorrow-theme'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'uguu-org/vim-matrix-screensaver', { 'on':  'Matrix' }
@@ -194,27 +194,6 @@ else
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 
-set background=dark
-
-silent! colorscheme solarized
-
-" tricky way to check if solarized colorscheme is available
-if exists(":SolarizedOptions")
-    "turn off italic fonts (e.g. used in comment sections)
-    let g:solarized_italic = 0
-    " turn on experimental showing trail spaces feature
-    let g:solarized_hitrail = 1
-    colorscheme solarized
-    "high contrast in diff mode
-    let g:solarized_diffmode="high"
-    "REMARK: after setting g:solarized_diffmode colorscheme has to be reloaded
-    "Invisible character colors
-    highlight NonText guifg=#4a4a59
-    highlight SpecialKey guifg=#4a4a59
-    "special list characters visibility level
-    let g:solarized_visibility="normal"
-endif
-
 " GUI OPTIONS - only affects gvim
 if has("gui_running")
     set guioptions-=T           " No toolbar
@@ -237,19 +216,7 @@ if has("gui_running")
     endif
 else "terminal mode/no gui
     set t_Co=256
-    let g:solarized_termcolors=256
 endif
-
-colorscheme solarized
-" set proper colour of signcolumn - broken by solarized colorscheme
-highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
-" better contrast - overwrite setting from solarized plugin - those lines have
-" to be placed after [colorscheme solarized] command
-highlight Normal guifg=LightGray
-highlight Normal ctermfg=LightGray
-highlight Comment guifg=DarkGray
-highlight Comment ctermfg=DarkGray
-highlight LineNr guifg=yellow
 
 set cursorline
 set cursorcolumn
@@ -366,7 +333,7 @@ vmap <leader>{ c{jkpa}jk
 " ack plugin configuration
 let g:ackprg = 'ag --nogroup --nocolor --column' "change Ack to Ag (silver searcher)
 
-" Highlight Word {{{
+" Highlight Word
 "
 " This mini-plugin provides a few mappings for highlighting words temporarily.
 "
@@ -375,7 +342,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column' "change Ack to Ag (silver searc
 " gives you one color of highlighting.  Now you can use <leader>N where N is
 " a number from 1-6 to highlight the current word in a specific color.
 
-function! HiInterestingWord(n) " {{{
+function! HiInterestingWord(n)
     " Save our location.
     normal! mz
 
@@ -396,9 +363,9 @@ function! HiInterestingWord(n) " {{{
 
     " Move back to our original location.
     normal! `z
-endfunction " }}}
+endfunction
 
-function! VisualHiInterestingWord(n) " {{{
+function! VisualHiInterestingWord(n)
     " Save our location.
 "    normal! mz
 
@@ -419,9 +386,7 @@ function! VisualHiInterestingWord(n) " {{{
 
     " Move back to our original location.
     normal! `[
-endfunction " }}}
-
-" Mappings {{{
+endfunction
 
 nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
 nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
@@ -429,6 +394,7 @@ nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
 nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
+nnoremap <silent> <leader>7 :call HiInterestingWord(7)<cr>
 
 vnoremap <silent> <leader>1 :call VisualHiInterestingWord(1)<cr>
 vnoremap <silent> <leader>2 :call VisualHiInterestingWord(2)<cr>
@@ -436,23 +402,20 @@ vnoremap <silent> <leader>3 :call VisualHiInterestingWord(3)<cr>
 vnoremap <silent> <leader>4 :call VisualHiInterestingWord(4)<cr>
 vnoremap <silent> <leader>5 :call VisualHiInterestingWord(5)<cr>
 vnoremap <silent> <leader>6 :call VisualHiInterestingWord(6)<cr>
+vnoremap <silent> <leader>7 :call VisualHiInterestingWord(7)<cr>
 
-" }}}
-" Default Highlights {{{
 
-hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
-hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
-hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
-hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
-hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
-hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
+function DefineColoursForCustomHighlights()
+    hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=160
+    hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
+    hi def InterestingWord3 guifg=#ffffff ctermfg=15 guibg=#0000ff ctermbg=21
+    hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
+    hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
+    hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
+    hi def InterestingWord7 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
+endfunction
 
-" }}}
-
-" }}}
-
-" Visual Mode */# from Scrooloose {{{
-
+" Visual Mode */# from Scrooloose
 function! s:VSetSearch()
   let temp = @@
   norm! gvy
@@ -462,8 +425,6 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
-" }}}
 
 " different filetype association
 au BufRead,BufNewFile *.can set filetype=c
@@ -707,8 +668,8 @@ inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
 " mappings for fast background switching
-nmap <leader>bl :set background=light<CR>
-nmap <leader>bd :set background=dark<CR>
+nmap <leader>bl :colorscheme Tomorrow<CR>:call DefineColoursForCustomHighlights()<CR>
+nmap <leader>bd :colorscheme Tomorrow-Night-Bright<CR>:call SetMyColoursForDarkMode()<CR>:call DefineColoursForCustomHighlights()<CR>
 
 " fugitive: show read only history log buffer
 nnoremap <leader>sl :G -p log --oneline --graph --decorate --all<CR>L
@@ -742,6 +703,26 @@ nnoremap <leader>SP {dap{Pj
 " some other text, and press Ctrl-R. The two pieces of text should then be
 " swapped.
 vnoremap <C-R> <Esc>`.``gvP``P
+
+" colorscheme tomorrow configuration
+" add path to vim colors
+set rtp+=$HOME/.vim/plugged/tomorrow-theme/vim
+colorscheme Tomorrow-Night-Bright
+
+function SetMyColoursForDarkMode()
+    highlight LineNr guifg=goldenrod ctermfg=LightYellow
+    highlight CursorLineNr guifg=yellow ctermfg=yellow
+    " NonText used for "eol", "extends" and "precedes".
+    " highlight NonText guifg=aquamarine
+    " SpecialKey used for "nbsp", "space", "tab" and "trail".
+    " highlight SpecialKey guifg=aquamarine
+    highlight SpecialKey guifg=red ctermfg=red
+    " turn on highlighting NonText and SpecialKey
+    set list
+endfunction
+
+call SetMyColoursForDarkMode()
+call DefineColoursForCustomHighlights()
 
 " TODO:
 " set cindent only for the C source code family
