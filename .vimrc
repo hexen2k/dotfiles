@@ -54,13 +54,6 @@ Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/
 " snippet files for snipmate
 Plug 'honza/vim-snippets'
 
-
-" TODO: check this colorscheme
-" https://github.com/morhetz/gruvbox
-" TODO: vim wrapper for ansynchrous tasks
-" Plug 'skywind3000/asyncrun.vim'
-
-
 " VIM-PLUG MANAGER USAGE:
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -750,9 +743,6 @@ nnoremap <leader>SP {dap{Pj
 vnoremap <C-R> <Esc>`.``gvP``P
 
 " TODO:
-" set showmatch
-" skip loading behaviours MSWIN
-" let g:skip_loading_mswin = 1
 " set cindent only for the C source code family
 
 set rtp-=$HOME/vimfiles
