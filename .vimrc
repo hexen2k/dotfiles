@@ -699,7 +699,7 @@ vnoremap <C-R> <Esc>`.``gvP``P
 " colorscheme tomorrow configuration
 " add path to vim colors
 set rtp+=$HOME/.vim/plugged/tomorrow-theme/vim
-colorscheme Tomorrow-Night-Bright
+silent! colorscheme Tomorrow-Night-Bright
 
 function SetMyColoursForDarkMode()
     highlight LineNr guifg=goldenrod ctermfg=LightYellow
