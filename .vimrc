@@ -426,8 +426,8 @@ autocmd BufRead,BufNewFile *.arg set filetype=tcl
 set listchars=eol:¬,tab:▸-,trail:˽
 
 " switching between buffers
-nnoremap <C-Tab> :bnext<cr>
-nnoremap <C-S-Tab> :bprev<cr>
+nnoremap gb :bnext<cr>
+nnoremap gB :bprev<cr>
 
 " mark and move up completed task
 nnoremap <leader>u jmmk^r+ddgg}P'm
