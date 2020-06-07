@@ -14,7 +14,6 @@ Plug 'chriskempson/tomorrow-theme'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'uguu-org/vim-matrix-screensaver', { 'on':  'Matrix' }
-" Plug 'ludovicchabant/vim-gutentags'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
