@@ -693,6 +693,8 @@ nnoremap <leader>SP {dap{Pj
 " dt in normal mode, or x in visual mode). Then, use visual mode to select
 " some other text, and press Ctrl-R. The two pieces of text should then be
 " swapped.
+" NOTE: it works only in forward direction: deletion has to be done before
+" visualy selected area.
 vnoremap <C-R> <Esc>`.``gvP``P
 
 " colorscheme tomorrow configuration
