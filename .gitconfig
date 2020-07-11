@@ -1,0 +1,12 @@
+[user]
+	email = hexen2k@gmail.com
+	name = hexen2k
+[alias]
+	l = log --oneline --graph --decorate --all
+[core]
+	autocrlf = true
+	editor = C:/apps/Vim/vim82/gvim.exe
+[merge]
+	tool = vimdiff
+[init]
+	templatedir = ~/.git_template
