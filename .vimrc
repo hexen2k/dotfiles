@@ -436,6 +436,10 @@ nnoremap <leader>u jmmk^r+ddgg}P'm
 nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 
+" paste actual time in following format: 15:28
+nnoremap <leader>t "=strftime("%H:%M")<CR>P
+inoremap <leader>t <C-R>=strftime("%H:%M")<CR>
+
 " surround with {} braces - obsolete, surround plugin does the same
 nnoremap <leader>{ viWa}Bi{%
 
