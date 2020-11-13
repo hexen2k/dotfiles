@@ -150,6 +150,10 @@ set noautochdir
 " include all subdir during search
 set path+=**
 
+" search ctags file in current directory or recursively in upward direction
+" (see help file-searching for ; explanation)
+set tags=./tags;
+
 set foldenable
 set foldlevelstart=0
 set foldnestmax=10
