@@ -273,6 +273,9 @@ map ][ /}<CR>b99]}\<SPACE>
 map ]] j0[[%/{<CR>\<SPACE>
 map [] k$][%?}<CR>\<SPACE>
 
+" clear diff in csv split for TC (remove coulmn 1,2,4 from csv)
+nnoremap <leader>cd :SignifyDiff<CR> :windo %s/^\([^;]\+;\)\{2}\([^;]*\);\([^;]\+\);\(.*\)/\2; \4<CR> :windo set readonly<CR>
+
 " edit and source vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>G
 nnoremap <leader>sv :source $MYVIMRC<cr>
