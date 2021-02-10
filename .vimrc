@@ -542,6 +542,8 @@ imap <c-j> <Plug>snipMateNextOrTrigger
 smap <C-j> <Plug>snipMateNextOrTrigger
 imap <c-k> <Plug>snipMateBack
 smap <c-k> <Plug>snipMateBack
+" force using the new SnipMate parser
+let g:snipMate = { 'snippet_version' : 1 }
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
