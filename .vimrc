@@ -213,6 +213,7 @@ endif
 
 set cursorline
 set cursorcolumn
+set nomousehide
 
 " shift lines or selection in normal, input and visual mode
 nnoremap <A-j> :m .+1<CR>
@@ -523,6 +524,7 @@ let g:editorconfig_blacklist = {
 " grepper plugin configuration
 let g:grepper = {}
 let g:grepper.tools = ['rg','git','grep']
+let g:grepper.dir = 'repo,file'
 " search for the current word
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
 " search for the current selection
