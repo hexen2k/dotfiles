@@ -113,7 +113,7 @@ set virtualedit+=block
 " allow backspaces everywhere
 set backspace=indent,eol,start
 " auto-pairs Fly mode ON
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 
 set wrapscan
 
